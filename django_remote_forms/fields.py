@@ -122,7 +122,8 @@ class RemoteTimeField(RemoteField):
             # If initial value is datetime then convert it using first available input format
 
             if (isinstance(field_dict['initial'], (datetime.datetime, datetime.time, datetime.date))):
-                if not getattr(field_dict['input_formats'], 'len', None):
+                has_input_formats = len(field_dict.get('input_formats', [])) > 0
+                if not has_input_formats:
                     if isinstance(field_dict['initial'], datetime.datetime):
                         field_dict['input_formats'] = settings.DATETIME_INPUT_FORMATS
                     elif isinstance(field_dict['initial'], datetime.date):
