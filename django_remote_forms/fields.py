@@ -134,7 +134,7 @@ class RemoteTimeField(RemoteField):
                         field_dict['input_formats'] = settings.DATETIME_INPUT_FORMATS
                     elif isinstance(field_dict['initial'], datetime.date):
                         field_dict['input_formats'] = settings.DATE_INPUT_FORMATS
-                    elif isinstance(field_dict['initial'], datetime.time):atetimeformat
+                    elif isinstance(field_dict['initial'], datetime.time):
                         field_dict['input_formats'] = settings.TIME_INPUT_FORMATS
 
                 input_format = field_dict['input_formats'][0]
